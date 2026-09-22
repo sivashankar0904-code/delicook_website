@@ -11,6 +11,13 @@
   // server build, and tries to wrap the app with @opennextjs/cloudflare —
   // which then fails looking for .next/standalone/, a directory that a static
   // export never creates.
+  // Run the Next.js export before uploading. Cloudflare's deploy step invokes
+  // `wrangler deploy` directly, so without this the assets directory below
+  // would not exist yet and the deploy fails with ENOENT on ./out.
+  "build": {
+    "command": "npm run build"
+  },
+
   "assets": {
     "directory": "./out",
     "not_found_handling": "404-page"
