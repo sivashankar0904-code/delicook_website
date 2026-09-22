@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink antialiased;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Section heading used across every page: centred, tight, heavy. */
+  .section-title {
+    @apply text-center text-[28px] font-extrabold tracking-tight sm:text-[34px];
+  }
+
+  .section-sub {
+    @apply mx-auto mt-3 max-w-2xl text-center text-[15px] leading-relaxed text-ink-muted;
+  }
+
+  .card {
+    @apply rounded-xl border border-line bg-white;
+  }
+
+  /* The red-to-amber pill from the Contact form's submit button. */
+  .btn-gradient {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand-gradient px-7 py-3
+           text-[15px] font-semibold text-white transition-opacity hover:opacity-90
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+           focus-visible:outline-brand-red;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg border border-line bg-white
+           px-7 py-3 text-[15px] font-semibold text-ink transition-colors hover:bg-surface-grey
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+           focus-visible:outline-brand-red;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-line bg-white px-4 py-2.5 text-[14px]
+           text-ink placeholder:text-ink-faint focus:border-brand-coral focus:outline-none
+           focus:ring-1 focus:ring-brand-coral;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-[13px] font-medium text-ink;
+  }
+
+  /* Grey block standing in for photography that isn't shot yet. */
+  .placeholder-box {
+    @apply flex items-center justify-center rounded-lg bg-surface-placeholder;
+  }
+}
