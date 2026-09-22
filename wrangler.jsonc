@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "delicook-website",
+  "compatibility_date": "2026-09-21",
+
+  // This site is a Next.js *static export* (`output: 'export'` in
+  // next.config.mjs). There is no server runtime, so it deploys as plain
+  // static assets and NOT through the OpenNext Workers adapter.
+  //
+  // Without this block, `wrangler deploy` auto-detects "Next.js", assumes a
+  // server build, and tries to wrap the app with @opennextjs/cloudflare —
+  // which then fails looking for .next/standalone/, a directory that a static
+  // export never creates.
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}
