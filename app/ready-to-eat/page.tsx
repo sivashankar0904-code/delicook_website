@@ -8,7 +8,7 @@ import { readyToEat } from '@/data/products';
 export const metadata: Metadata = {
   title: 'Ready To Eat',
   description:
-    'Fully prepared South Indian dishes — tiffin sambar, peanut chutney, kambu and ragi kool, boiled vegetables. Heat, serve and enjoy.',
+    'Fully prepared South Indian dishes — poondu and sundaikai kulambu, dosa masal, mix veg curry, kambu and ragi kool. Heat, serve and enjoy.',
 };
 
 export default function ReadyToEatPage() {

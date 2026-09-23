@@ -35,7 +35,7 @@ Every push to `main` redeploys.
 | `/`                      | Home                                   |
 | `/about`                 | Company story, formats, why-choose-us  |
 | `/contact`               | Contact details and enquiry form       |
-| `/ready-to-cook`         | 11 pastes, mixes and kits              |
+| `/ready-to-cook`         | 9 pastes, mixes, kits and prepped veg  |
 | `/ready-to-eat`          | 6 prepared dishes                      |
 | `/faqs`                  | Common questions                       |
 | `/terms`                 | Placeholder copy — needs legal review  |
@@ -46,14 +46,18 @@ Every push to `main` redeploys.
 
 - **Products** — `data/products.ts`. One array; `category` decides which page an item
   appears on. Re-splitting the range is a one-word edit per product.
+- **Product images** — `public/products/<slug>.webp`, 800×800, matching the slug in
+  `data/products.ts`. Source PNGs live in the gitignored `pics/` folder; convert new
+  ones with `sharp(src).resize(800, 800, { fit: 'cover' }).webp({ quality: 82 })`.
 - **Contact details, nav, footer** — `data/site.ts`.
 - **Colours and type** — `tailwind.config.ts`; shared component classes live in
   `app/globals.css`.
 
 ## Outstanding before launch
 
-1. **Photography.** Every image is a grey placeholder, marked `TODO` in the source.
-   Search for `placeholder-box` to find them.
+1. **Photography.** Product images are AI-generated renders, not photographs of the
+   actual packs. Replace `public/products/<slug>.webp` with real product shots before
+   any campaign that implies they are photographs.
 2. **Contact form submission.** The form validates and renders but does not send
    anywhere — a static export cannot process a POST. Add a Cloudflare Worker or an
    endpoint such as Web3Forms, then wire it up in `components/ContactForm.tsx`

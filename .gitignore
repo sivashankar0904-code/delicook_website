@@ -34,3 +34,7 @@ yarn-error.log*
 # Source brand assets. The web-ready copy lives in public/logo.png; the SVG in
 # here is a 14MB traced export and is not suitable for the site.
 /DeliCook_logo all formats/
+
+# Source product renders (1024px PNGs, ~28MB). The web-ready WebP versions
+# live in public/products/ — regenerate them with sharp if these change.
+/pics/

@@ -8,7 +8,7 @@ import { readyToCook } from '@/data/products';
 export const metadata: Metadata = {
   title: 'Ready To Cook',
   description:
-    'Hand-crafted South Indian pastes, mixes and kits — sambar and rasam mixes, curry pastes, kulambu and more. The prep is done; you bring the pan.',
+    'Hand-crafted South Indian pastes, mixes and kits — sambar and rasam mixes, curry pastes, meal kits and prepped vegetables. The prep is done; you bring the pan.',
 };
 
 export default function ReadyToCookPage() {

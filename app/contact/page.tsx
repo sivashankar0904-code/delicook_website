@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { ContactForm } from '@/components/ContactForm';
 import { Section } from '@/components/Section';
 import { MailIcon, PhoneIcon, PinIcon } from '@/components/Icons';
+import { productImage } from '@/data/products';
 import { site } from '@/data/site';
 
 export const metadata: Metadata = {
@@ -61,8 +63,15 @@ export default function ContactPage() {
         <div className="shell grid gap-8 lg:grid-cols-2">
           <ContactForm />
 
-          {/* TODO: swap for an embedded map or storefront photo. */}
-          <div className="placeholder-box min-h-[320px] w-full" aria-hidden="true" />
+          <div className="relative min-h-[320px] w-full overflow-hidden rounded-xl bg-surface-grey">
+            <Image
+              src={productImage('sambar-mix')}
+              alt="Freshly ground sambar spice blend"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 

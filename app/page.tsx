@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Section } from '@/components/Section';
 import { ProductCard } from '@/components/ProductCard';
 import { ClockIcon, HeartIcon, LeafIcon } from '@/components/Icons';
-import { readyToCook, readyToEat } from '@/data/products';
+import { productImage, readyToCook, readyToEat } from '@/data/products';
 
 const formats = [
   {
@@ -10,12 +11,14 @@ const formats = [
     body: 'Pastes, mixes and kits with the grinding and chopping already done. Add your ingredients and cook a proper meal in minutes.',
     href: '/ready-to-cook',
     count: readyToCook.length,
+    image: productImage('sambar-mix'),
   },
   {
     title: 'Ready To Eat',
     body: 'Fully prepared dishes crafted with authentic recipes. Heat, serve and enjoy — no cooking required.',
     href: '/ready-to-eat',
     count: readyToEat.length,
+    image: productImage('kambu-kool'),
   },
 ];
 
@@ -71,8 +74,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* TODO: replace with hero photography. */}
-          <div className="placeholder-box aspect-[16/11] w-full" aria-hidden="true" />
+          <div className="relative aspect-[16/11] w-full overflow-hidden rounded-xl bg-surface-grey">
+            <Image
+              src={productImage('chicken-curry-paste')}
+              alt="Hand-crafted South Indian curry paste"
+              fill
+              priority
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -84,8 +95,15 @@ export default function HomePage() {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {formats.map((format) => (
             <Link key={format.title} href={format.href} className="card group p-5 transition-shadow hover:shadow-md">
-              {/* TODO: replace with format photography. */}
-              <div className="placeholder-box aspect-[16/9] w-full" aria-hidden="true" />
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-surface-grey">
+                <Image
+                  src={format.image}
+                  alt={format.title}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
               <h3 className="mt-5 text-[18px] font-bold transition-colors group-hover:text-brand-red">
                 {format.title}
               </h3>
