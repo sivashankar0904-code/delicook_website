@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { ContactForm } from '@/components/ContactForm';
 import { Section } from '@/components/Section';
-import { MailIcon, PhoneIcon, PinIcon } from '@/components/Icons';
+import { MailIcon, PinIcon } from '@/components/Icons';
 import { productImage } from '@/data/products';
 import { site } from '@/data/site';
 
@@ -14,9 +14,8 @@ export const metadata: Metadata = {
 };
 
 const channels = [
-  { Icon: PhoneIcon, title: 'Phone', value: site.phone, href: `tel:${site.phone.replace(/\s/g, '')}` },
   { Icon: MailIcon, title: 'Email', value: site.email, href: `mailto:${site.email}` },
-  { Icon: PinIcon, title: 'Address', value: '402, Trade Ventures Tower, Bandra, Mumbai', href: null },
+  { Icon: PinIcon, title: 'Address', value: site.addressShort, href: null },
 ];
 
 export default function ContactPage() {
@@ -38,7 +37,7 @@ export default function ContactPage() {
 
       {/* Three contact channels. */}
       <section className="pb-14">
-        <div className="shell grid gap-6 md:grid-cols-3">
+        <div className="shell mx-auto grid max-w-3xl gap-6 md:grid-cols-2">
           {channels.map(({ Icon, title, value, href }) => (
             <div key={title} className="card p-7 text-center">
               <Icon className="mx-auto h-6 w-6 text-ink" />

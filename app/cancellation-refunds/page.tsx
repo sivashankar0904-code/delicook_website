@@ -42,13 +42,6 @@ export default function CancellationRefundsPage() {
           For any cancellation or refund query, email{' '}
           <a href={`mailto:${site.email}`} className="text-brand-red underline">
             {site.email}
-          </a>{' '}
-          or call{' '}
-          <a
-            href={`tel:${site.phone.replace(/\s/g, '')}`}
-            className="text-brand-red underline"
-          >
-            {site.phone}
           </a>
           .
         </p>

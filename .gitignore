@@ -38,3 +38,8 @@ yarn-error.log*
 # Source product renders (1024px PNGs, ~28MB). The web-ready WebP versions
 # live in public/products/ — regenerate them with sharp if these change.
 /pics/
+
+# Business paperwork kept alongside the project for convenience: packaging
+# mockups, invoices, and identity/tax documents (PAN, GST). None of it belongs
+# in a public repo — keep it out.
+/references/

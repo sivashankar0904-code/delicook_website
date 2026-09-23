@@ -13,6 +13,13 @@ export default function TermsPage() {
       title="Terms of Service"
       intro="These terms govern your use of the DeliCook website. By browsing this site, you agree to them."
     >
+      <LegalSection heading="Who we are">
+        <p>
+          DeliCook is a unit of {site.legalName}, a company registered in Tamil Nadu,
+          India, with its principal place of business at {site.address}.
+        </p>
+      </LegalSection>
+
       <LegalSection heading="Use of this website">
         <p>
           This website is provided for information about DeliCook and its products. You

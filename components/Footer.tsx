@@ -21,6 +21,9 @@ export function Footer() {
           <p className="mt-4 max-w-[26ch] text-[13px] leading-relaxed text-ink-muted">
             {site.footerBlurb}
           </p>
+          <p className="mt-4 max-w-[26ch] text-[12px] leading-relaxed text-ink-faint">
+            {site.entityLine}
+          </p>
         </div>
 
         <div>
@@ -51,16 +54,7 @@ export function Footer() {
                 {site.email}
               </a>
             </li>
-            <li>
-              Phone:{' '}
-              <a
-                href={`tel:${site.phone.replace(/\s/g, '')}`}
-                className="transition-colors hover:text-brand-red"
-              >
-                {site.phone}
-              </a>
-            </li>
-            <li className="max-w-[28ch] leading-relaxed">Address: {site.address}</li>
+            <li className="max-w-[30ch] leading-relaxed">Address: {site.address}</li>
           </ul>
         </div>
 
@@ -97,7 +91,7 @@ export function Footer() {
 
       <div className="border-t border-line">
         <div className="shell flex flex-col gap-2 py-5 text-[12px] text-ink-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} DeliCook India. All rights reserved.</p>
+          <p>© {year} {site.legalName}. All rights reserved.</p>
           <p>Designed with love for healthy kitchens.</p>
         </div>
       </div>

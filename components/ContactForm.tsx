@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
+import { site } from '@/data/site';
 
 type Status = 'idle' | 'submitted';
 
@@ -107,8 +108,8 @@ export function ContactForm() {
         {status === 'submitted' && (
           <span className="text-ink-muted">
             Thanks — form handling isn&apos;t connected yet. Please email us at{' '}
-            <a href="mailto:support@delicook.com" className="text-brand-red underline">
-              support@delicook.com
+            <a href={`mailto:${site.email}`} className="text-brand-red underline">
+              {site.email}
             </a>
             .
           </span>
